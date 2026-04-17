@@ -1,0 +1,32 @@
+.trust-badge {
+  padding: var(--spacing-xl) 0;
+
+  .trust-badge-content {
+    max-width: var(--section-max-width);
+    margin: var(--section-margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-l);
+    text-align: center;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-l);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    picture {
+      width: 160px;
+      flex-shrink: 0;
+    }
+
+    p {
+      margin: 0;
+      font-size: var(--body-font-size-s);
+      color: var(--color-text-secondary);
+    }
+  }
+}

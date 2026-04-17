@@ -1,13 +1,7 @@
 .section {
   --top-bottom-spacing: 0;
-  --section-container-width: var(--grid-container-width);
-  --section-column-width: var(--grid-column-width);
 
   padding: var(--top-bottom-spacing) 0;
-
-  > * {
-    color: light-dark(var(--color-dark), var(--color-light));
-  }
 
   &.grid-2 {
     --grid-size: 2;
@@ -142,11 +136,50 @@
     width: 100%;
   }
 
+  /* Layout direction */
+  &.layout-horizontal {
+    > .default-content,
+    > .block-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap-spacing, var(--spacing-l));
+    }
+
+    > .block-content > * {
+      flex: 1 1 0;
+      min-width: 280px;
+    }
+  }
+
+  /* CIBC background colors */
+  &.bg-light-blue {
+    background-color: var(--color-bg-light-blue);
+  }
+
+  &.bg-light-teal {
+    background-color: var(--color-bg-light-teal);
+  }
+
+  &.bg-warm {
+    background-color: var(--color-bg-warm);
+  }
+
+  &.bg-neutral {
+    background-color: var(--color-bg-neutral);
+  }
+
+  &.bg-pale-blue {
+    background-color: var(--color-bg-pale-blue);
+  }
+
+  &.bg-footer {
+    background-color: var(--color-bg-footer);
+    color: var(--color-text-inverse);
+  }
+
   /* Pre-defined layouts */
   &.layout-bento {
     .block-content {
-      --grid-container-width: 83.4%;
-
       display: grid;
       gap: var(--gap-spacing);
       grid-template-columns: 1fr;

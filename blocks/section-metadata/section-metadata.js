@@ -54,6 +54,16 @@ export function setColorScheme(section) {
   });
 }
 
+function toClassName(name) {
+  return typeof name === 'string'
+    ? name
+      .toLowerCase()
+      .replace(/[^0-9a-z]/gi, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '')
+    : '';
+}
+
 function handleBackground(background, section) {
   const pic = background.content.querySelector('picture');
   if (pic) {
@@ -64,21 +74,17 @@ function handleBackground(background, section) {
   }
   const color = background.text;
   if (color) {
-    section.style.backgroundColor = color.startsWith('color-token')
-      ? `var(${color.replace('color-token', '--color')})`
-      : color;
-    setColorScheme(section);
+    const namedBg = toClassName(color);
+    const named = ['light-blue', 'light-teal', 'warm', 'neutral', 'pale-blue', 'footer'];
+    if (named.includes(namedBg)) {
+      section.classList.add(`bg-${namedBg}`);
+    } else {
+      section.style.backgroundColor = color.startsWith('color-token')
+        ? `var(${color.replace('color-token', '--color')})`
+        : color;
+      setColorScheme(section);
+    }
   }
-}
-
-function toClassName(name) {
-  return typeof name === 'string'
-    ? name
-      .toLowerCase()
-      .replace(/[^0-9a-z]/gi, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '')
-    : '';
 }
 
 async function handleStyle(text, section) {

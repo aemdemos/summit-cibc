@@ -223,3 +223,57 @@
     }
   }
 }
+
+/* Hero Promo variant — CIBC promotional hero */
+.hero.promo {
+  color: var(--color-text);
+  background-color: var(--color-bg-light-blue);
+
+  .hero-foreground {
+    background: none;
+    padding: var(--spacing-xxl) 0;
+
+    .fg-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-heading {
+      font-size: var(--heading-font-size-xl);
+    }
+
+    .hero-detail {
+      font-size: var(--body-font-size-s);
+      color: var(--color-text-secondary);
+    }
+  }
+
+  .hero-background {
+    picture {
+      position: relative;
+      inset: unset;
+    }
+
+    img {
+      object-fit: contain;
+      max-height: 400px;
+    }
+  }
+}
+
+@media (width >= 600px) {
+  .hero.promo {
+    .hero-background {
+      picture {
+        position: absolute;
+        inset: 0;
+      }
+
+      img {
+        object-fit: contain;
+        object-position: left center;
+      }
+    }
+  }
+}

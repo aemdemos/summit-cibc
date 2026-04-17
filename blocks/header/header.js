@@ -4,7 +4,7 @@ import { setColorScheme } from '../section-metadata/section-metadata.js';
 
 const { locale } = getConfig();
 
-const HEADER_PATH = '/fragments/nav/header';
+const HEADER_PATH = '/fragments/nav/cibc-header';
 const HEADER_ACTIONS = [
   '/tools/widgets/scheme',
   '/tools/widgets/language',
@@ -168,7 +168,94 @@ async function decorateActionSection(section) {
   section.classList.add('actions-section');
 }
 
+function isCibcHeader(fragment) {
+  return !!fragment.querySelector('.mega-nav');
+}
+
+function decorateCibcUtilityBar(section) {
+  section.classList.add('cibc-utility-bar');
+  const right = document.createElement('div');
+  right.className = 'utility-bar-right';
+
+  const offers = document.createElement('a');
+  offers.href = '/en/special-offers.html';
+  offers.className = 'utility-link utility-offers';
+  offers.textContent = 'Special Offers';
+  right.append(offers);
+
+  const lang = document.createElement('span');
+  lang.className = 'utility-link utility-lang';
+  lang.textContent = 'English';
+  right.append(lang);
+
+  section.querySelector('.default-content').append(right);
+}
+
+function decorateCibcBrandBar(section) {
+  section.classList.add('cibc-brand-bar');
+  const actions = document.createElement('div');
+  actions.className = 'brand-bar-actions';
+
+  const icons = ['search', 'location', 'profile'];
+  icons.forEach((name) => {
+    const btn = document.createElement('button');
+    btn.className = `brand-icon brand-icon-${name}`;
+    btn.setAttribute('aria-label', name);
+    if (name === 'location') {
+      const a = document.createElement('a');
+      a.href = 'https://locations.cibc.com/';
+      a.className = `brand-icon brand-icon-${name}`;
+      a.setAttribute('aria-label', 'Locations');
+      actions.append(a);
+      return;
+    }
+    actions.append(btn);
+  });
+
+  const signOn = document.createElement('a');
+  signOn.href = 'https://www.cibconline.cibc.com/ebm-resources/'
+    + 'public/signon/cibc/kaas/signon.html';
+  signOn.className = 'brand-signon';
+  signOn.textContent = 'Sign On';
+  actions.append(signOn);
+
+  const register = document.createElement('a');
+  register.href = '/en/personal-banking/ways-to-bank/'
+    + 'how-to/register-for-mobile-and-online-banking.html';
+  register.className = 'brand-register';
+  register.textContent = 'Register for Online and Mobile Banking';
+  actions.append(register);
+
+  const toggle = document.createElement('button');
+  toggle.className = 'brand-icon brand-icon-toggle';
+  toggle.setAttribute('aria-label', 'Menu');
+  toggle.addEventListener('click', () => {
+    const header = document.body.querySelector('header');
+    if (header) header.classList.toggle('is-mobile-open');
+  });
+  actions.append(toggle);
+
+  section.querySelector('.default-content').append(actions);
+}
+
+function decorateCibcNavSection(section) {
+  section.classList.add('cibc-nav-section');
+}
+
+async function decorateCibcHeader(fragment) {
+  fragment.classList.add('cibc-header-content');
+  const sections = fragment.querySelectorAll(':scope > .section');
+  if (sections[0]) decorateCibcUtilityBar(sections[0]);
+  if (sections[1]) decorateCibcBrandBar(sections[1]);
+  if (sections[2]) decorateCibcNavSection(sections[2]);
+}
+
 async function decorateHeader(fragment) {
+  if (isCibcHeader(fragment)) {
+    await decorateCibcHeader(fragment);
+    return;
+  }
+
   const sections = fragment.querySelectorAll(':scope > .section');
   if (sections[0]) decorateBrandSection(sections[0]);
   if (sections[1]) decorateNavSection(sections[1]);
@@ -186,12 +273,14 @@ async function decorateHeader(fragment) {
 export default async function init(el) {
   const headerMeta = getMetadata('header');
   const path = headerMeta || HEADER_PATH;
+  let fragment;
   try {
-    const fragment = await loadFragment(`${locale.prefix}${path}`);
-    fragment.classList.add('header-content');
-    await decorateHeader(fragment);
-    el.append(fragment);
-  } catch (e) {
-    throw Error(e);
+    fragment = await loadFragment(`${locale.prefix}${path}`);
+  } catch {
+    // Fallback: try with /content prefix (local dev server)
+    fragment = await loadFragment(`/content${locale.prefix}${path}`);
   }
+  fragment.classList.add('header-content');
+  await decorateHeader(fragment);
+  el.append(fragment);
 }

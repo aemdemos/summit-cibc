@@ -364,3 +364,249 @@ header {
     }
   }
 }
+
+/* ========================================
+   CIBC Header Styles
+   Scoped to .cibc-header-content
+   ======================================== */
+
+header:has(.cibc-header-content) {
+  --cibc-header-total: 144px;
+
+  max-height: var(--cibc-header-total);
+  background: var(--color-background);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
+
+  .cibc-header-content {
+    display: grid;
+    grid-template-areas:
+      "utility"
+      "brand"
+      "nav";
+    grid-template-rows: 32px 64px 48px;
+  }
+
+  /* Section 1: Utility Bar */
+  .cibc-utility-bar {
+    grid-area: utility;
+    background: var(--color-bg-neutral);
+    border-bottom: 1px solid #ddd;
+
+    .default-content {
+      max-width: var(--section-max-width);
+      margin: var(--section-margin);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 32px;
+      font-size: var(--body-font-size-xs);
+    }
+
+    ul {
+      display: flex;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-brand-primary);
+      }
+    }
+
+    .utility-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .utility-offers::before {
+      content: '★';
+      margin-right: 4px;
+    }
+
+    .utility-lang::before {
+      content: '🌐';
+      margin-right: 4px;
+      font-size: 12px;
+    }
+
+    .utility-lang {
+      color: var(--color-text-secondary);
+      font-size: var(--body-font-size-xs);
+      cursor: default;
+    }
+  }
+
+  /* Section 2: Brand Bar */
+  .cibc-brand-bar {
+    grid-area: brand;
+
+    .default-content {
+      max-width: var(--section-max-width);
+      margin: var(--section-margin);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    img {
+      width: 142px;
+      height: 36px;
+    }
+
+    .brand-bar-actions {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .brand-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--color-text);
+      font-size: 18px;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-brand-primary);
+      }
+    }
+
+    .brand-icon-search::before {
+      content: '🔍';
+    }
+
+    .brand-icon-location::before {
+      content: '📍';
+    }
+
+    .brand-icon-profile::before {
+      content: '👤';
+    }
+
+    .brand-icon-toggle {
+      display: none;
+    }
+
+    .brand-icon-toggle::before {
+      content: '☰';
+      font-size: 24px;
+    }
+
+    .brand-signon {
+      background: var(--color-brand-primary);
+      color: var(--color-text-inverse);
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-size: var(--body-font-size-s);
+      font-weight: 500;
+      text-decoration: none;
+      margin-left: 8px;
+      white-space: nowrap;
+
+      &:hover {
+        background: var(--color-brand-primary-hover);
+      }
+    }
+
+    .brand-register {
+      font-size: var(--body-font-size-xs);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      margin-left: 12px;
+      white-space: nowrap;
+
+      &:hover {
+        color: var(--color-brand-primary);
+      }
+    }
+  }
+
+  /* Section 3: Nav */
+  .cibc-nav-section {
+    grid-area: nav;
+
+    .default-content {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+
+  /* Mobile: hide utility bar, simplify brand */
+  &.is-mobile-open {
+    max-height: 100vh;
+    bottom: 0;
+    overflow-y: auto;
+
+    .cibc-header-content {
+      grid-template-rows: 0 64px 1fr;
+    }
+
+    .cibc-utility-bar {
+      display: none;
+    }
+  }
+}
+
+@media (width < 900px) {
+  header:has(.cibc-header-content) {
+    --cibc-header-total: 64px;
+
+    .cibc-header-content {
+      grid-template-areas:
+        "brand"
+        "nav";
+      grid-template-rows: 64px 0;
+    }
+
+    .cibc-utility-bar {
+      display: none;
+    }
+
+    .cibc-brand-bar {
+      .brand-icon-search,
+      .brand-icon-location,
+      .brand-icon-profile,
+      .brand-signon,
+      .brand-register {
+        display: none;
+      }
+
+      .brand-icon-toggle {
+        display: flex;
+      }
+    }
+
+    .cibc-nav-section {
+      display: none;
+    }
+
+    &.is-mobile-open {
+      .cibc-header-content {
+        grid-template-rows: 64px 1fr;
+      }
+
+      .cibc-nav-section {
+        display: block;
+        overflow-y: auto;
+      }
+    }
+  }
+}

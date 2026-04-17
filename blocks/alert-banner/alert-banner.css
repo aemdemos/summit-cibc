@@ -1,0 +1,38 @@
+.alert-banner {
+  background-color: #fff3cd;
+  border-bottom: 1px solid #e0c36a;
+
+  .alert-banner-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-m);
+    padding: var(--spacing-s) 0;
+    max-width: var(--section-max-width);
+    margin: var(--section-margin);
+    font-size: var(--body-font-size-s);
+    line-height: 1.4;
+
+    > div {
+      flex: 1;
+    }
+
+    a {
+      color: var(--color-brand-primary);
+      font-weight: 500;
+    }
+  }
+
+  .alert-banner-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--color-text-secondary);
+    padding: 4px 8px;
+    flex-shrink: 0;
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+}

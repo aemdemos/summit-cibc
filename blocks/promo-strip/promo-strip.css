@@ -1,0 +1,26 @@
+.promo-strip {
+  background-color: var(--color-bg-light-teal);
+  padding: var(--spacing-l) 0;
+
+  .promo-strip-content {
+    max-width: var(--section-max-width);
+    margin: var(--section-margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-l);
+    text-align: center;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-l);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

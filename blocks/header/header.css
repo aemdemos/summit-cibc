@@ -382,7 +382,6 @@ header:has(.cibc-header-content) {
   max-height: var(--cibc-header-total);
   overflow: visible;
   background: var(--color-background);
-  box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
 
   .cibc-header-content {
     display: grid;

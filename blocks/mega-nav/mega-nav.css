@@ -34,7 +34,6 @@
   text-align: left;
   text-decoration: none;
   cursor: pointer;
-  border-bottom: 1px solid var(--color-bg-neutral);
   font-family: var(--font-family);
 }
 
@@ -97,21 +96,14 @@
     align-items: center;
     height: 100%;
     padding: 0 20px;
-    border-bottom: 3px solid transparent;
+    border-bottom: none;
     white-space: nowrap;
   }
 
   .mega-nav-trigger:hover,
   .mega-nav-link:hover,
   .mega-nav-item.is-open .mega-nav-trigger {
-    border-bottom-color: var(--color-brand-primary);
     color: var(--color-brand-primary);
-  }
-
-  .mega-nav-trigger::after {
-    width: 6px;
-    height: 6px;
-    margin-left: 6px;
   }
 
   /* Full-width flyout panel */
@@ -127,12 +119,13 @@
   }
 
   .mega-nav-panel-inner {
-    max-width: var(--section-max-width);
-    margin: var(--section-margin);
-    padding: var(--spacing-xl) 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 24px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-xl);
+    box-sizing: border-box;
   }
 
   .mega-nav-column {
@@ -141,18 +134,5 @@
 
   .mega-nav-column a {
     padding: 6px 0;
-  }
-
-  /* Overlay behind flyout */
-  .mega-nav.has-open-flyout::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgb(0 0 0 / 25%);
-    z-index: -1;
-    pointer-events: none;
   }
 }

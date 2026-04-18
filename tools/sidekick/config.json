@@ -1,0 +1,5 @@
+{
+  "project": "CIBC Personal Banking",
+  "editUrlLabel": "Document Authoring",
+  "editUrlPattern": "https://da.live/edit#/{{org}}/{{site}}{{pathname}}"
+}

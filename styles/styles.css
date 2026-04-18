@@ -185,6 +185,16 @@ h6 {
   line-height: var(--heading-line-height);
 }
 
+/* Page-level h1 should be centered */
+main h1 {
+  text-align: center;
+}
+
+/* h2 immediately after h1 (subtitle) should also be centered */
+main h1 + h2 {
+  text-align: center;
+}
+
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
 h3 { font-size: var(--heading-font-size-l); }
@@ -224,5 +234,24 @@ aem-sidekick {
 
   &[open="true"].is-ready {
     opacity: 1;
+  }
+}
+
+/* Marketing link CTA: chevron, no underline */
+a.marketing-link,
+.marketing-link a {
+  text-decoration: none;
+  color: var(--color-brand-primary);
+  font-weight: 500;
+
+  &::after {
+    content: ' ›';
+    font-size: 1.2em;
+    line-height: 1;
+  }
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.85;
   }
 }

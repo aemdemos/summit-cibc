@@ -275,6 +275,9 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
+      background: rgb(255 255 255 / 90%);
+      padding: var(--spacing-l);
+      border-radius: 8px;
     }
 
     .hero-heading {

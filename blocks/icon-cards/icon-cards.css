@@ -2,8 +2,9 @@
   padding: var(--spacing-xl) 0;
 
   .icon-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-l);
   }
 
@@ -15,6 +16,7 @@
     text-decoration: none;
     color: var(--color-text);
     padding: var(--spacing-m);
+    width: calc(50% - var(--spacing-l));
 
     &:hover {
       color: var(--color-brand-primary);
@@ -42,7 +44,7 @@
 }
 
 @media (width >= 768px) {
-  .icon-cards .icon-cards-grid {
-    grid-template-columns: repeat(5, 1fr);
+  .icon-cards .icon-card {
+    width: calc(20% - var(--spacing-l));
   }
 }

@@ -48,7 +48,7 @@ export default async function init(el) {
 
     const textWrap = document.createElement('div');
     textWrap.className = 'icon-grid-text';
-    textWrap.append(...cols[1].children);
+    textWrap.append(...cols[1].childNodes);
 
     item.append(iconWrap, textWrap);
     items.push(item);

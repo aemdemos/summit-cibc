@@ -33,7 +33,7 @@
   }
 
   .feature-card-quick-links {
-    background: var(--color-bg-pale-blue);
+    background: var(--color-background);
 
     ul {
       list-style: none;

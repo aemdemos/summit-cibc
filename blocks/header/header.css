@@ -376,7 +376,6 @@ body:has(.cibc-header-content) {
 
 header:has(.cibc-header-content) {
   --cibc-header-total: 144px;
-
   --section-margin: 0 auto;
 
   height: var(--cibc-header-total);
@@ -506,20 +505,21 @@ header:has(.cibc-header-content) {
       }
     }
 
-    .brand-icon-search::before {
-      content: '🔍';
+    .brand-icon-search {
+      background: url('/img/icons/icon-search.svg') center / 20px no-repeat;
     }
 
-    .brand-icon-location::before {
-      content: '📍';
+    .brand-icon-location {
+      background: url('/img/icons/icon-location.svg') center / 20px no-repeat;
     }
 
-    .brand-icon-profile::before {
-      content: '👤';
+    .brand-icon-profile {
+      background: url('/img/icons/icon-profile.svg') center / 20px no-repeat;
     }
 
     .brand-icon-toggle {
       display: none;
+      background: none;
     }
 
     .brand-icon-toggle::before {
@@ -559,7 +559,6 @@ header:has(.cibc-header-content) {
   /* Section 3: Nav */
   .cibc-nav-section {
     grid-area: nav;
-    border-bottom: 1px solid var(--color-bg-neutral);
 
     .default-content,
     .block-content {

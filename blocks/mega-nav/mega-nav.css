@@ -1,7 +1,6 @@
 .mega-nav {
   position: relative;
   background: var(--color-background);
-  border-bottom: 1px solid var(--color-bg-neutral);
 }
 
 .mega-nav-bar {
@@ -29,8 +28,8 @@
   padding: 14px 16px;
   border: none;
   background: none;
-  font-size: var(--body-font-size-s);
-  font-weight: 500;
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
   color: var(--color-text);
   text-align: left;
   text-decoration: none;
@@ -40,20 +39,7 @@
 }
 
 .mega-nav-trigger::after {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid var(--color-text-secondary);
-  border-bottom: 2px solid var(--color-text-secondary);
-  transform: rotate(45deg);
-  margin-left: 8px;
-  vertical-align: middle;
-  transition: transform 0.2s;
-}
-
-.mega-nav-item.is-open .mega-nav-trigger::after {
-  transform: rotate(-135deg);
+  display: none;
 }
 
 .mega-nav-trigger:hover,

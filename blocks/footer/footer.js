@@ -1,7 +1,7 @@
 import { getConfig, getMetadata } from '../../scripts/ak.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-const FOOTER_PATH = '/fragments/nav/footer';
+const FOOTER_PATH = '/fragments/nav/cibc-footer';
 
 /**
  * loads and decorates the footer
@@ -11,8 +11,13 @@ export default async function init(el) {
   const { locale } = getConfig();
   const footerMeta = getMetadata('footer');
   const path = footerMeta || FOOTER_PATH;
+  let fragment;
   try {
-    const fragment = await loadFragment(`${locale.prefix}${path}`);
+    fragment = await loadFragment(`${locale.prefix}${path}`);
+  } catch {
+    fragment = await loadFragment(`/content${locale.prefix}${path}`);
+  }
+  try {
     fragment.classList.add('footer-content');
 
     const sections = [...fragment.querySelectorAll('.section')];

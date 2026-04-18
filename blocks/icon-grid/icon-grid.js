@@ -26,6 +26,11 @@ export default async function init(el) {
       if (link) {
         ctaEl = link;
         ctaEl.classList.add('icon-grid-cta');
+        // Optional 3rd column: CSS class for the CTA
+        if (cols[2]) {
+          const cls = cols[2].textContent.trim();
+          if (cls) ctaEl.classList.add(cls);
+        }
       }
       return;
     }

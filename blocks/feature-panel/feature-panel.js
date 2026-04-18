@@ -43,12 +43,14 @@ export default async function init(el) {
 
     if (type === 'cta') {
       const link = content.querySelector('a');
-      const text = content.textContent.trim();
       if (link) {
         ctaEl = link;
         ctaEl.classList.add('feature-panel-cta');
-      } else if (text) {
-        // Text-only CTA label with no link — skip
+        // Optional 3rd column: CSS class for the CTA
+        if (cols[2]) {
+          const cls = cols[2].textContent.trim();
+          if (cls) ctaEl.classList.add(cls);
+        }
       }
     } else if (type === 'quick-links') {
       cards.push(buildQuickLinksCard(content));

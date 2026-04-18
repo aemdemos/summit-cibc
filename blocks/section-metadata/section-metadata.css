@@ -136,6 +136,16 @@
     width: 100%;
   }
 
+  /* Full-width: removes max-width constraint from children */
+  &.full-width {
+    > .default-content,
+    > .block-content {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
   /* Layout direction */
   &.layout-horizontal {
     > .default-content,

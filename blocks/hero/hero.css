@@ -224,13 +224,6 @@
   }
 }
 
-/* Hero Promo: override section max-width so image spans full */
-.section:has(.hero.promo) > .block-content {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-
 /* Hero Promo variant — CIBC promotional hero */
 .hero.promo {
   --hero-promo-height: 360px;

@@ -238,8 +238,10 @@ aem-sidekick {
 }
 
 /* Marketing link CTA: chevron, no underline */
+/* Auto-applies to standalone links (sole child of a <p>) */
 a.marketing-link,
-.marketing-link a {
+.marketing-link a,
+p > a:only-child {
   text-decoration: none;
   color: var(--color-brand-primary);
   font-weight: 500;

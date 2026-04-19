@@ -17,13 +17,6 @@
         "value": ""
       },
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Hero Content",
-        "valueType": "string"
-      },
-      {
         "component": "select",
         "name": "classes",
         "value": "",
@@ -42,42 +35,6 @@
     ]
   },
   {
-    "id": "feature-panel",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Panel Content",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "icon-grid",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Grid Content",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "icon-cards",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Cards Content",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
     "id": "alert-banner",
     "fields": [
       {
@@ -90,20 +47,96 @@
     ]
   },
   {
+    "id": "feature-panel",
+    "fields": [
+      {
+        "component": "select",
+        "name": "cardType",
+        "value": "regular",
+        "label": "Card Type",
+        "valueType": "string",
+        "options": [
+          { "name": "Regular", "value": "regular" },
+          { "name": "Quick Links", "value": "quick-links" },
+          { "name": "CTA", "value": "cta" }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Card Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-grid",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "iconAlt",
+        "label": "Icon Alt Text",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-cards",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "iconAlt",
+        "label": "Icon Alt Text",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "label",
+        "value": "",
+        "label": "Card Label",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "trust-badge",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "badge",
         "label": "Badge Image",
         "multi": false
       },
       {
         "component": "text-input",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt Text",
+        "name": "badgeAlt",
+        "label": "Badge Alt Text",
         "value": ""
       },
       {
@@ -122,7 +155,7 @@
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Columns Content",
+        "label": "Column Content",
         "valueType": "string"
       }
     ]
@@ -132,9 +165,16 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "text",
+        "name": "category",
         "value": "",
-        "label": "Sitemap Content",
+        "label": "Category Label",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "links",
+        "value": "",
+        "label": "Links",
         "valueType": "string"
       }
     ]
@@ -144,9 +184,23 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "text",
+        "name": "label",
         "value": "",
-        "label": "Navigation Content",
+        "label": "Nav Label",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "column1",
+        "value": "",
+        "label": "Links Column 1",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "column2",
+        "value": "",
+        "label": "Links Column 2",
         "valueType": "string"
       }
     ]

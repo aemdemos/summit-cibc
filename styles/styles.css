@@ -146,6 +146,7 @@ a {
 /* sections — max-width enforced on children */
 .section {
   display: block;
+  padding: var(--spacing-xxl) 0;
 
   > .default-content,
   > .block-content {
@@ -185,14 +186,21 @@ h6 {
   line-height: var(--heading-line-height);
 }
 
-/* Page-level h1 should be centered */
+/* Page-level h1 should be centered and sized down for Arial */
 main h1 {
   text-align: center;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 var(--spacing-xs);
 }
 
 /* h2 immediately after h1 (subtitle) should also be centered */
 main h1 + h2 {
   text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-l);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }

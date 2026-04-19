@@ -68,17 +68,6 @@ footer {
     border-top: 1px solid rgb(255 255 255 / 20%);
     padding: var(--spacing-xl) 0;
 
-    .block-content > div {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--spacing-xl);
-    }
-
-    .block-content > div > div {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
     p {
       margin: var(--spacing-xs) 0;
     }
@@ -131,10 +120,3 @@ footer main p > a:only-child::after {
   display: none;
 }
 
-@media (width >= 900px) {
-  footer {
-    .section:nth-child(3) .block-content > div {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-}

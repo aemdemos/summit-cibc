@@ -1,0 +1,26 @@
+.footer-sitemap-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.footer-sitemap-label a {
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
+  display: block;
+  margin-bottom: var(--spacing-s);
+}
+
+.footer-sitemap-links p {
+  margin: var(--spacing-xs) 0;
+}
+
+@media (width >= 900px) {
+  .footer-sitemap-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

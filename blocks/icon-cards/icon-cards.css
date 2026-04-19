@@ -16,6 +16,7 @@
     text-decoration: none;
     color: var(--color-text);
     padding: var(--spacing-m);
+    box-sizing: border-box;
     width: calc(50% - var(--spacing-l));
 
     &:hover {
@@ -51,6 +52,7 @@
 
 @media (width >= 768px) {
   .icon-cards .icon-card {
-    width: calc(20% - var(--spacing-l));
+    width: calc((100% - 4 * var(--spacing-l)) / 5);
+    padding: var(--spacing-s);
   }
 }

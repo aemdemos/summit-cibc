@@ -1,57 +1,135 @@
 footer {
+  background-color: var(--color-bg-footer);
+  color: var(--color-text-inverse);
+
   a {
+    color: var(--color-text-inverse);
     text-decoration: none;
+    opacity: 0.85;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .footer-content {
-    max-width: var(--grid-container-width);
-    margin: 48px auto;
-    font-size: 14px;
-  }
-
-  .section-legal ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .section-copyright p {
-    margin: 0;
+    font-size: var(--body-font-size-s);
   }
 
   .section {
+    .default-content,
+    .block-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+  }
+
+  /* Section 1: Branch locator + Need to meet */
+  .section:first-child {
+    padding: var(--spacing-xl) 0;
+
     .default-content {
-      max-width: initial;
-      margin: initial;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xl);
+      align-items: flex-start;
+    }
+
+    p {
+      margin: var(--spacing-xs) 0;
+    }
+
+    a.btn-primary {
+      background: var(--color-brand-primary);
+      border-color: var(--color-brand-primary);
+    }
+  }
+
+  /* Section 2: Quick links row (Contact Us, Special Offers, etc.) */
+  .section:nth-child(2) {
+    border-top: 1px solid rgb(255 255 255 / 20%);
+    padding: var(--spacing-l) 0;
+
+    .default-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-l) var(--spacing-xl);
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  /* Section 3: Sitemap columns */
+  .section:nth-child(3) {
+    border-top: 1px solid rgb(255 255 255 / 20%);
+    padding: var(--spacing-xl) 0;
+
+    .block-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    p {
+      margin: var(--spacing-xs) 0;
+    }
+  }
+
+  /* Section 4: Legal links */
+  .section-legal {
+    border-top: 1px solid rgb(255 255 255 / 20%);
+    padding: var(--spacing-l) 0;
+
+    .default-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-m) var(--spacing-xl);
+    }
+
+    p {
+      margin: 0;
+      font-size: var(--body-font-size-xs);
+    }
+  }
+
+  /* Section 5: Copyright + logo */
+  .section-copyright {
+    border-top: 1px solid rgb(255 255 255 / 20%);
+    padding: var(--spacing-l) 0;
+
+    .default-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--spacing-l);
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+    }
+
+    p {
+      margin: 0;
+      font-size: var(--body-font-size-xs);
+      opacity: 0.7;
     }
   }
 }
 
+/* Override marketing-link chevron in footer */
+footer main p > a:only-child::after {
+  display: none;
+}
+
 @media (width >= 900px) {
   footer {
-    margin: 0;
-
-    .section-legal {
-      display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
-      margin-bottom: 24px;
-
-      ul {
-        display: flex;
-        justify-content: end;
-        gap: var(--spacing-xl);
-      }
-
-      li {
-        margin: 0;
-      }
-    }
-
-    .section-copyright {
-      display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
+    .section:nth-child(3) .block-content {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

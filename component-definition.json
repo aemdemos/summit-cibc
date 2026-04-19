@@ -151,6 +151,84 @@
             }
           },
           "model": "mega-nav"
+        },
+        {
+          "title": "Article Cards",
+          "id": "article-cards",
+          "plugins": {
+            "da": {
+              "name": "Article Cards",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1) img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1) img[alt]"
+                }
+              ]
+            }
+          },
+          "model": "article-cards"
+        },
+        {
+          "title": "Testimonial",
+          "id": "testimonial",
+          "plugins": {
+            "da": {
+              "name": "Testimonial",
+              "rows": 1,
+              "columns": 2
+            }
+          },
+          "model": "testimonial"
+        },
+        {
+          "title": "Product Cards",
+          "id": "product-cards",
+          "plugins": {
+            "da": {
+              "name": "Product Cards",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1) img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1) img[alt]"
+                }
+              ]
+            }
+          },
+          "model": "product-cards"
+        },
+        {
+          "title": "Contact Strip",
+          "id": "contact-strip",
+          "plugins": {
+            "da": {
+              "name": "Contact Strip",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "icon",
+                  "selector": "div:nth-child(1) img[src]"
+                },
+                {
+                  "name": "iconAlt",
+                  "selector": "div:nth-child(1) img[alt]"
+                }
+              ]
+            }
+          },
+          "model": "contact-strip"
         }
       ]
     },

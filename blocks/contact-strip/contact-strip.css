@@ -1,0 +1,56 @@
+.contact-strip {
+  padding: var(--spacing-xl) 0;
+
+  .contact-strip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xl);
+  }
+
+  .contact-strip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 260px;
+  }
+
+  .contact-strip-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--spacing-m);
+
+    picture,
+    img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+  }
+
+  .contact-strip-body {
+    h3,
+    h4 {
+      font-size: var(--body-font-size-s);
+      font-weight: 500;
+      margin: 0 0 var(--spacing-xs);
+    }
+
+    p {
+      margin: var(--spacing-xs) 0;
+      font-size: var(--body-font-size-m);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    a {
+      color: var(--color-brand-primary);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

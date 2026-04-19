@@ -14,7 +14,11 @@
       "trust-badge",
       "columns",
       "footer-sitemap",
-      "mega-nav"
+      "mega-nav",
+      "article-cards",
+      "testimonial",
+      "product-cards",
+      "contact-strip"
     ]
   }
 ]

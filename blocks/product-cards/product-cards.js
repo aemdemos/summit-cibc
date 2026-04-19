@@ -13,8 +13,6 @@ export default async function init(el) {
     // Col 1: image with optional bg color class
     const imageCol = cols[0];
     const img = imageCol.querySelector('picture, img');
-    const bgClass = imageCol.textContent.trim().replace(/\s+/g, '');
-
     if (img) {
       const imageWrap = document.createElement('div');
       imageWrap.className = 'product-card-image';

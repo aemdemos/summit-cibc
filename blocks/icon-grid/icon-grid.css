@@ -62,9 +62,3 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-@media (width >= 900px) {
-  .icon-grid .icon-grid-items {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}

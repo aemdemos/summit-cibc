@@ -35,6 +35,10 @@
   .feature-card-quick-links {
     background: var(--color-background);
 
+    a.btn-primary {
+      color: var(--color-text-inverse);
+    }
+
     ul {
       list-style: none;
       padding: 0;

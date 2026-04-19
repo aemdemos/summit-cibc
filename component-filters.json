@@ -1,0 +1,20 @@
+[
+  {
+    "id": "section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "feature-panel",
+      "icon-grid",
+      "icon-cards",
+      "alert-banner",
+      "trust-badge",
+      "columns",
+      "footer-sitemap",
+      "mega-nav"
+    ]
+  }
+]

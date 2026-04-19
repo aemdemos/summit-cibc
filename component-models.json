@@ -1,0 +1,192 @@
+[
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Hero Content",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Variant",
+        "valueType": "string",
+        "options": [
+          { "name": "Default", "value": "" },
+          { "name": "Promo", "value": "promo" },
+          { "name": "Light", "value": "light" },
+          { "name": "Dark", "value": "dark" },
+          { "name": "Small", "value": "small" },
+          { "name": "Large", "value": "large" },
+          { "name": "Center", "value": "center" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "feature-panel",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Panel Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-grid",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Grid Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-cards",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Cards Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "alert-banner",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Alert Message",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "trust-badge",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Badge Image",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Badge Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Columns Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "footer-sitemap",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Sitemap Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "mega-nav",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Navigation Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "value": "",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          { "name": "Full Width", "value": "full-width" },
+          { "name": "Neutral Background", "value": "bg-neutral" },
+          { "name": "Warm Background", "value": "bg-warm" },
+          { "name": "Light Blue Background", "value": "bg-light-blue" },
+          { "name": "Horizontal Layout", "value": "layout-horizontal" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text-area",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      }
+    ]
+  }
+]

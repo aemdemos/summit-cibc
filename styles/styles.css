@@ -50,6 +50,9 @@
   --body-font-size-xs: 12px;
   --body-line-height: 1.6;
 
+  /* layout */
+  --grid-container-width: 1200px;
+
   /* misc */
   --header-height: 64px;
   --breadcrumb-height: 24px;

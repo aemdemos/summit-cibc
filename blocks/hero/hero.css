@@ -27,7 +27,12 @@
   }
 
   &.dark {
-    color: var(--color-light);
+    background-color: var(--color-bg-footer);
+    color: #fff;
+
+    .hero-foreground {
+      background: none;
+    }
   }
 
   &.quiet-background {
@@ -81,7 +86,7 @@
 
   .hero-foreground {
     min-height: var(--min-height);
-    padding: var(--spacing-xxl) 0;
+    padding: var(--spacing-xxl) 24px;
     box-sizing: border-box;
     position: relative;
     display: flex;

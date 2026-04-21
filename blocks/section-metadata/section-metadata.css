@@ -176,6 +176,8 @@
 
   &.bg-neutral {
     background-color: var(--color-bg-neutral);
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   &.bg-pale-blue {

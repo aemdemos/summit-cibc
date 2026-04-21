@@ -29,6 +29,7 @@
   &.dark {
     background-color: var(--color-bg-footer);
     color: #fff;
+    margin-bottom: 40px;
 
     .hero-background > div {
       background-color: var(--color-bg-footer);
@@ -36,11 +37,18 @@
 
     .hero-foreground {
       background: none;
-    }
 
-    a.btn,
-    a.btn-primary {
-      color: #fff;
+      a {
+        color: #fff;
+      }
+
+      p > a:only-child {
+        color: #fff;
+
+        &::after {
+          color: #fff;
+        }
+      }
     }
   }
 

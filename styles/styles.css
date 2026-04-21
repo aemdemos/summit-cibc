@@ -190,7 +190,14 @@ h6 {
 }
 
 /* Section-level headings should be centered */
-main h2 {
+main h2,
+main h4 + h2,
+main h2 + h3 {
+  text-align: center;
+}
+
+/* h4 before h2 (welcome heading pattern) */
+main h4:has(+ h2) {
   text-align: center;
 }
 

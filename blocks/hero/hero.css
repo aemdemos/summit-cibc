@@ -50,6 +50,18 @@
         }
       }
 
+      /* When hero has two columns, give both white card backgrounds */
+      .fg-text:nth-child(1):not(:last-child) {
+        background: var(--color-background);
+        color: var(--color-text);
+        padding: var(--spacing-l);
+        border-radius: 8px;
+
+        a {
+          color: var(--color-brand-primary);
+        }
+      }
+
       /* Second column: sign-on panel with white card */
       .fg-text:nth-child(2) {
         background: var(--color-background);
@@ -64,6 +76,10 @@
 
         a {
           color: var(--color-brand-primary);
+        }
+
+        a.btn-primary {
+          color: #fff;
         }
 
         .hero-site-dropdown {

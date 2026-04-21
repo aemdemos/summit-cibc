@@ -31,6 +31,22 @@
         "valueType": "string"
       },
       {
+        "component": "text-input",
+        "name": "leftPanelColor",
+        "value": "",
+        "label": "Left Panel Background",
+        "description": "CSS color for left panel (e.g. white, transparent, #f2f3f2)",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "rightPanelColor",
+        "value": "",
+        "label": "Right Panel Background",
+        "description": "CSS color for right panel (e.g. white, transparent, #f2f3f2)",
+        "valueType": "string"
+      },
+      {
         "component": "select",
         "name": "classes",
         "value": "",

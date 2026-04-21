@@ -32,31 +32,34 @@ function decorateBackground(bg) {
 }
 
 function decorateCTAs(fg) {
-  // Find all links that are inside <strong> (primary) or standalone in <p> (secondary)
   const textCol = fg.querySelector('.fg-text');
   if (!textCol) return;
 
   const ctas = [];
 
-  // Collect CTA links: strong > a = primary, p > a:only-child = secondary
+  // Collect all CTA links from paragraphs
   textCol.querySelectorAll('p').forEach((p) => {
     const strong = p.querySelector('strong');
     if (strong) {
-      // All links inside <strong> are primary CTAs
-      const links = strong.querySelectorAll('a');
-      links.forEach((a, i) => {
-        a.classList.add('btn');
-        if (i === 0) a.classList.add('btn-primary');
-        else a.classList.add('btn-secondary');
-        ctas.push(a);
-      });
+      const links = [...strong.querySelectorAll('a')];
+      links.forEach((a) => ctas.push(a));
       p.remove();
     } else {
       const link = p.querySelector('a:only-child');
       if (link && !p.textContent.trim().replace(link.textContent.trim(), '')) {
-        link.classList.add('btn', 'btn-secondary');
         ctas.push(link);
         p.remove();
+      }
+    }
+  });
+
+  // Also collect any already-decorated button links (CDN may pre-decorate)
+  textCol.querySelectorAll('a.btn, a.btn-primary, a.btn-secondary').forEach((a) => {
+    if (!ctas.includes(a)) {
+      ctas.push(a);
+      if (a.parentElement?.tagName === 'P' || a.parentElement?.tagName === 'STRONG') {
+        const wrapper = a.parentElement.tagName === 'STRONG' ? a.parentElement.closest('p') || a.parentElement : a.parentElement;
+        if (wrapper.querySelectorAll('a').length === 0) wrapper.remove();
       }
     }
   });
@@ -64,7 +67,13 @@ function decorateCTAs(fg) {
   if (ctas.length > 0) {
     const ctaWrap = document.createElement('div');
     ctaWrap.className = 'hero-cta-group';
-    ctas.forEach((a) => ctaWrap.append(a));
+    ctas.forEach((a, i) => {
+      // Reset classes and apply correct style
+      a.classList.remove('btn-primary', 'btn-secondary');
+      a.classList.add('btn');
+      a.classList.add(i === 0 ? 'btn-primary' : 'btn-secondary');
+      ctaWrap.append(a);
+    });
     textCol.append(ctaWrap);
   }
 }

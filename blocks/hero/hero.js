@@ -147,11 +147,54 @@ function decorateForeground(fg) {
   decorateCTAs(fg);
 }
 
+function applyPanelColors(fg, colorRow) {
+  const cells = [...colorRow.children];
+  const fgTexts = fg.querySelectorAll('.fg-text');
+  cells.forEach((cell, i) => {
+    const color = cell.textContent.trim();
+    if (color && fgTexts[i]) {
+      if (color === 'transparent' || color === 'none') {
+        fgTexts[i].style.background = 'transparent';
+      } else {
+        fgTexts[i].style.backgroundColor = color;
+        // Auto-set text color based on brightness
+        const isLight = color === 'white' || color === '#fff' || color === '#ffffff'
+          || color.startsWith('rgb(2') || color.startsWith('#f') || color.startsWith('#e');
+        if (isLight) {
+          fgTexts[i].style.color = 'var(--color-text)';
+        }
+      }
+    }
+  });
+  colorRow.remove();
+}
+
 export default async function init(el) {
   const rows = [...el.querySelectorAll(':scope > div')];
+
+  // 3+ rows: last = panel colors, second-to-last = foreground, before that = background
+  // 2 rows: last = foreground, first = background
+  // 1 row: foreground only
+  let colorRow = null;
+  if (rows.length >= 3) {
+    // Check if the last row looks like a color row (no images, no headings, short text)
+    const lastRow = rows[rows.length - 1];
+    const hasImage = lastRow.querySelector('picture, img');
+    const hasHeading = lastRow.querySelector('h1, h2, h3, h4, h5, h6');
+    const hasLinks = lastRow.querySelector('a');
+    if (!hasImage && !hasHeading && !hasLinks) {
+      colorRow = rows.pop();
+    }
+  }
+
   const fg = rows.pop();
   fg.classList.add('hero-foreground');
   decorateForeground(fg);
+
+  if (colorRow) {
+    applyPanelColors(fg, colorRow);
+  }
+
   if (rows.length) {
     const bg = rows.pop();
     bg.classList.add('hero-background');

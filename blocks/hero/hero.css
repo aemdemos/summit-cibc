@@ -50,24 +50,14 @@
         }
       }
 
-      /* When hero has two columns, give both white card backgrounds */
-      .fg-text:nth-child(1):not(:last-child) {
-        background: var(--color-background);
-        color: var(--color-text);
+      /* Panels with author-set background colors */
+      .fg-text {
         padding: var(--spacing-l);
         border-radius: 8px;
-
-        a {
-          color: var(--color-brand-primary);
-        }
       }
 
-      /* Second column: sign-on panel with white card */
+      /* Second column: sign-on panel */
       .fg-text:nth-child(2) {
-        background: var(--color-background);
-        color: var(--color-text);
-        padding: var(--spacing-l);
-        border-radius: 8px;
 
         h3 {
           font-size: var(--body-font-size-m);

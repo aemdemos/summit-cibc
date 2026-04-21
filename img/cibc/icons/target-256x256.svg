@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Icons/Illustrative/objects/target-256x256</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/Illustrative/objects/target-256x256" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons/Illustrative/Oval" fill="#F2F3F2">
+            <circle id="Oval" cx="128" cy="128" r="128"></circle>
+        </g>
+        <g id="Group" transform="translate(18.000000, 18.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#C41F3E" cx="109.1" cy="112.31" r="78.29"></circle>
+            <circle id="Oval" fill="#FFFFFF" cx="109.1" cy="112.31" r="55.92"></circle>
+            <circle id="Oval" fill="#C41F3E" cx="109.1" cy="112.31" r="33.55"></circle>
+            <circle id="Oval" fill="#FFFFFF" cx="109.1" cy="112.31" r="11.18"></circle>
+            <polygon id="Path" fill="#8B1D41" points="169.14 52.28 163.85 31.61 142.72 52.75 147.08 69.81 108.86 108.02 108.86 112.56 113.4 112.56 158.71 67.25 156.44 64.98"></polygon>
+            <polygon id="Path" fill="#C41F3E" points="189.87 57.58 169.16 52.26 148.01 73.4 148.02 73.4 148.02 73.4 108.86 112.56 113.39 112.56 151.63 74.33 168.73 78.72"></polygon>
+            <path d="M163.85,31.61 L169.14,52.28 L189.87,57.58 L168.73,78.72 L151.63,74.33 L113.4,112.56 L108.86,112.56 L108.86,108 L147.08,69.79 L142.72,52.73 L163.85,31.59 L163.85,31.61 Z M165.32,26.22 L161.91,29.64 L140.77,50.8 L139.66,51.91 L140.05,53.43 L144,69 L106.89,106.1 L106.08,106.91 L106.08,115.34 L114.51,115.34 L115.31,114.54 L152.43,77.42 L168.01,81.42 L169.54,81.81 L170.65,80.7 L191.79,59.56 L195.21,56.14 L190.52,54.94 L171.41,50 L166.52,30.92 L165.32,26.23 L165.32,26.22 Z" id="Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

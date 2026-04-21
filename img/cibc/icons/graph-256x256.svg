@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Icons/Illustrative/charts-graphs/graph-256x256</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/Illustrative/charts-graphs/graph-256x256" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons/Illustrative/Oval" fill="#F2F3F2">
+            <circle id="Oval" cx="128" cy="128" r="128"></circle>
+        </g>
+        <g id="Group" transform="translate(59.000000, 60.000000)" fill-rule="nonzero">
+            <g id="Layer_1">
+                <polygon id="Path" fill="#C4203F" points="137.62 138.21 0.200000023 138.21 0.200000023 0.790000024 6.20000003 0.790000024 6.20000003 132.21 137.62 132.21"></polygon>
+                <polygon id="Path" fill="#C4203F" points="42.26 121.1 17.21 121.1 17.21 84.5000001 42.26 84.5000001 42.26 118.44"></polygon>
+                <polygon id="Path" fill="#8B1D41" points="79.8200001 121.1 54.78 121.1 54.78 49.82 79.8200001 49.82 79.8200001 117.94"></polygon>
+                <polygon id="Path" fill="#C4203F" points="117.39 121.1 92.3500001 121.1 92.3500001 16.9 117.39 16.9 117.39 117.44"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

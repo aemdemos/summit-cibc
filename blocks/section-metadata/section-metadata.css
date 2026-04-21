@@ -189,6 +189,21 @@
     color: var(--color-text-inverse);
   }
 
+  &.bg-dark {
+    background-color: var(--color-brand-dark);
+    color: var(--color-text-inverse);
+
+    a {
+      color: var(--color-text-inverse);
+    }
+
+    a.btn-primary {
+      background-color: var(--color-text-inverse);
+      border-color: var(--color-text-inverse);
+      color: var(--color-brand-dark);
+    }
+  }
+
   /* Pre-defined layouts */
   &.layout-bento {
     .block-content {

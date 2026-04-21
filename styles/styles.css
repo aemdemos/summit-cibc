@@ -206,6 +206,16 @@ main h1 + h2 {
   margin: 0 0 var(--spacing-l);
 }
 
+/* Section-level h2 + h3 subtitle pattern (e.g. welcome heading + subheading) */
+main h2 + h3 {
+  text-align: center;
+}
+
+/* Center h2 when followed by h3 subtitle */
+main h2:has(+ h3) {
+  text-align: center;
+}
+
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
 h3 { font-size: var(--heading-font-size-l); }

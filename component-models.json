@@ -17,6 +17,13 @@
         "value": ""
       },
       {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Hero Content",
+        "valueType": "string"
+      },
+      {
         "component": "select",
         "name": "classes",
         "value": "",

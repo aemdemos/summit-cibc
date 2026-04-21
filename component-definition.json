@@ -15,11 +15,15 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) img[src]"
+                  "selector": "div:nth-child(1) > div > picture > img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) img[alt]"
+                  "selector": "div:nth-child(1) > div > picture > img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2) > div"
                 }
               ]
             }

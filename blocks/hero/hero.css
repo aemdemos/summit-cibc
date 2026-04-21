@@ -37,6 +37,11 @@
     .hero-foreground {
       background: none;
     }
+
+    a.btn,
+    a.btn-primary {
+      color: #fff;
+    }
   }
 
   &.quiet-background {

@@ -139,6 +139,44 @@
     h1 {
       text-align: left;
     }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-m);
+      margin-top: var(--spacing-l);
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        line-height: 1;
+        border: 2px solid;
+      }
+
+      .btn-primary {
+        background-color: var(--color-brand-primary);
+        border-color: var(--color-brand-primary);
+        color: #fff;
+
+        &:hover {
+          background-color: var(--color-brand-primary-hover);
+          border-color: var(--color-brand-primary-hover);
+        }
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        border-color: currentcolor;
+        color: inherit;
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+    }
   }
 
   &.stack {

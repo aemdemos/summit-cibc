@@ -31,6 +31,44 @@ function decorateBackground(bg) {
   vidLink.remove();
 }
 
+function decorateCTAs(fg) {
+  // Find all links that are inside <strong> (primary) or standalone in <p> (secondary)
+  const textCol = fg.querySelector('.fg-text');
+  if (!textCol) return;
+
+  const ctas = [];
+
+  // Collect CTA links: strong > a = primary, p > a:only-child = secondary
+  textCol.querySelectorAll('p').forEach((p) => {
+    const strong = p.querySelector('strong');
+    if (strong) {
+      // All links inside <strong> are primary CTAs
+      const links = strong.querySelectorAll('a');
+      links.forEach((a, i) => {
+        a.classList.add('btn');
+        if (i === 0) a.classList.add('btn-primary');
+        else a.classList.add('btn-secondary');
+        ctas.push(a);
+      });
+      p.remove();
+    } else {
+      const link = p.querySelector('a:only-child');
+      if (link && !p.textContent.trim().replace(link.textContent.trim(), '')) {
+        link.classList.add('btn', 'btn-secondary');
+        ctas.push(link);
+        p.remove();
+      }
+    }
+  });
+
+  if (ctas.length > 0) {
+    const ctaWrap = document.createElement('div');
+    ctaWrap.className = 'hero-cta-group';
+    ctas.forEach((a) => ctaWrap.append(a));
+    textCol.append(ctaWrap);
+  }
+}
+
 function decorateForeground(fg) {
   const { children } = fg;
   for (const [idx, child] of [...children].entries()) {
@@ -53,6 +91,8 @@ function decorateForeground(fg) {
       }
     }
   }
+
+  decorateCTAs(fg);
 }
 
 export default async function init(el) {

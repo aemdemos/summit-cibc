@@ -24,6 +24,13 @@
         "valueType": "string"
       },
       {
+        "component": "richtext",
+        "name": "sidePanel",
+        "value": "",
+        "label": "Side Panel (Sign-on / Links)",
+        "valueType": "string"
+      },
+      {
         "component": "select",
         "name": "classes",
         "value": "",

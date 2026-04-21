@@ -237,6 +237,7 @@ h6 { font-size: var(--heading-font-size-xs); }
 
 strong {
   font-weight: 600;
+  color: #d4a017;
 }
 
 input,

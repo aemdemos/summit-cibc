@@ -37,7 +37,6 @@ function decorateCTAs(fg) {
 
   const ctas = [];
 
-  // Collect all CTA links from paragraphs
   textCol.querySelectorAll('p').forEach((p) => {
     const strong = p.querySelector('strong');
     if (strong) {
@@ -53,7 +52,6 @@ function decorateCTAs(fg) {
     }
   });
 
-  // Also collect any already-decorated button links (CDN may pre-decorate)
   textCol.querySelectorAll('a.btn, a.btn-primary, a.btn-secondary').forEach((a) => {
     if (!ctas.includes(a)) {
       ctas.push(a);
@@ -68,7 +66,6 @@ function decorateCTAs(fg) {
     const ctaWrap = document.createElement('div');
     ctaWrap.className = 'hero-cta-group';
     ctas.forEach((a, i) => {
-      // Reset classes and apply correct style
       a.classList.remove('btn-primary', 'btn-secondary');
       a.classList.add('btn');
       a.classList.add(i === 0 ? 'btn-primary' : 'btn-secondary');
@@ -76,6 +73,51 @@ function decorateCTAs(fg) {
     });
     textCol.append(ctaWrap);
   }
+}
+
+/**
+ * Convert a <ul> of links into a <select> dropdown + Go button.
+ * Authored as: <ul><li><a href="url">Label</a></li>...</ul>
+ * Renders as: <select><option value="url">Label</option>...</select> + Go
+ */
+function decorateSidePanel(panel) {
+  const ul = panel.querySelector('ul');
+  if (!ul) return;
+
+  const select = document.createElement('select');
+  select.className = 'hero-site-select';
+
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = 'Select a site:';
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  select.append(placeholder);
+
+  ul.querySelectorAll('li').forEach((li) => {
+    const link = li.querySelector('a');
+    if (link) {
+      const option = document.createElement('option');
+      option.value = link.href;
+      option.textContent = link.textContent;
+      select.append(option);
+    }
+  });
+
+  const goBtn = document.createElement('button');
+  goBtn.className = 'btn btn-primary hero-site-go';
+  goBtn.textContent = 'Go';
+  goBtn.addEventListener('click', () => {
+    if (select.value) {
+      window.open(select.value, '_blank');
+    }
+  });
+
+  const dropdownWrap = document.createElement('div');
+  dropdownWrap.className = 'hero-site-dropdown';
+  dropdownWrap.append(select, goBtn);
+
+  ul.replaceWith(dropdownWrap);
 }
 
 function decorateForeground(fg) {
@@ -90,13 +132,14 @@ function decorateForeground(fg) {
         detail.classList.add('hero-detail');
       }
     }
-    // Determine foreground column types
     if (text) {
       child.classList.add('fg-text');
       if (idx === 0) {
         child.closest('.hero').classList.add('hero-text-start');
       } else {
         child.closest('.hero').classList.add('hero-text-end');
+        // Decorate side panel dropdowns
+        decorateSidePanel(child);
       }
     }
   }

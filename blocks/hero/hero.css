@@ -66,19 +66,26 @@
           color: var(--color-brand-primary);
         }
 
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: var(--spacing-s) 0 0;
-        }
+        .hero-site-dropdown {
+          display: flex;
+          gap: var(--spacing-s);
+          margin-top: var(--spacing-s);
 
-        li {
-          margin-block: 0;
-          padding: var(--spacing-xs) 0;
-          border-bottom: 1px solid rgb(0 0 0 / 8%);
+          .hero-site-select {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: var(--body-font-size-s);
+            font-family: var(--font-family);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: var(--color-background);
+            color: var(--color-text);
+            cursor: pointer;
+          }
 
-          &:last-child {
-            border-bottom: none;
+          .hero-site-go {
+            padding: 8px 20px;
+            font-size: var(--body-font-size-s);
           }
         }
       }

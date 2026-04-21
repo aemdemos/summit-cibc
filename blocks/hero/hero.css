@@ -30,6 +30,10 @@
     background-color: var(--color-bg-footer);
     color: #fff;
 
+    .hero-background > div {
+      background-color: var(--color-bg-footer);
+    }
+
     .hero-foreground {
       background: none;
     }

@@ -169,15 +169,65 @@ function applyPanelColors(fg, colorRow) {
   colorRow.remove();
 }
 
+function addAccessibility(el) {
+  el.setAttribute('role', 'banner');
+  el.setAttribute('aria-label', 'Hero');
+
+  // Label the heading as the accessible name if available
+  const heading = el.querySelector('.hero-heading');
+  if (heading) {
+    heading.setAttribute('id', 'hero-heading');
+    el.setAttribute('aria-labelledby', 'hero-heading');
+  }
+
+  // Background image is decorative
+  const bgImg = el.querySelector('.hero-background img');
+  if (bgImg) {
+    bgImg.setAttribute('role', 'presentation');
+    bgImg.setAttribute('aria-hidden', 'true');
+  }
+
+  const bgVideo = el.querySelector('.hero-background video');
+  if (bgVideo) {
+    bgVideo.setAttribute('role', 'presentation');
+    bgVideo.setAttribute('aria-hidden', 'true');
+  }
+
+  // Label the CTA group
+  const ctaGroup = el.querySelector('.hero-cta-group');
+  if (ctaGroup) {
+    ctaGroup.setAttribute('role', 'group');
+    ctaGroup.setAttribute('aria-label', 'Call to action');
+  }
+
+  // Label the site dropdown
+  const select = el.querySelector('.hero-site-select');
+  if (select) {
+    const label = select.closest('.fg-text')?.querySelector('h3');
+    if (label) {
+      label.setAttribute('id', 'hero-site-label');
+      select.setAttribute('aria-labelledby', 'hero-site-label');
+    }
+  }
+
+  const goBtn = el.querySelector('.hero-site-go');
+  if (goBtn) {
+    goBtn.setAttribute('aria-label', 'Go to selected site');
+  }
+
+  // Side panel landmark
+  const sidePanel = el.querySelector('.fg-text:nth-child(2)');
+  if (sidePanel) {
+    sidePanel.setAttribute('role', 'complementary');
+    sidePanel.setAttribute('aria-label', 'Sign on options');
+  }
+}
+
 export default async function init(el) {
   const rows = [...el.querySelectorAll(':scope > div')];
 
-  // 3+ rows: last = panel colors, second-to-last = foreground, before that = background
-  // 2 rows: last = foreground, first = background
-  // 1 row: foreground only
   let colorRow = null;
   if (rows.length >= 3) {
-    // Check if the last row looks like a color row (no images, no headings, short text)
     const lastRow = rows[rows.length - 1];
     const hasImage = lastRow.querySelector('picture, img');
     const hasHeading = lastRow.querySelector('h1, h2, h3, h4, h5, h6');
@@ -200,4 +250,6 @@ export default async function init(el) {
     bg.classList.add('hero-background');
     decorateBackground(bg);
   }
+
+  addAccessibility(el);
 }
